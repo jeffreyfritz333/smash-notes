@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#1a1a2e">
+  <title>Smash Notes</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="header" id="appHeader">
+    <button class="back-btn" id="headerBack" style="display:none">&larr;</button>
+    <h1 id="headerTitle">Smash Notes</h1>
+    <div class="playing-as" id="headerPlaying" style="display:none"></div>
+    <button class="sleep-btn" id="sleepBtn" title="Showcase">&#9790;</button>
+  </div>
+
+  <!-- Screen 1: Choose Your Fighter -->
+  <div class="screen active" id="charSelectScreen">
+    <div class="screen-title">Choose Your Fighter</div>
+    <div class="screen-subtitle">Who are you playing as?</div>
+    <input type="text" class="search-bar" placeholder="Search roster...">
+    <div class="roster-grid"></div>
+  </div>
+
+  <!-- Screen 2: Matchup Grid -->
+  <div class="screen" id="matchupsScreen">
+    <div class="stats-bar"></div>
+    <span class="change-char change-char-top">Change character</span>
+    <input type="text" class="search-bar" placeholder="Search opponent...">
+    <div class="roster-grid matchup-grid"></div>
+    <span class="change-char change-char-bottom">Change character</span>
+  </div>
+
+  <!-- Screen 3: Note Editor -->
+  <div class="screen" id="noteScreen"></div>
+
+  <!-- Screen 4: Sleep / Showcase -->
+  <div class="screen" id="sleepScreen">
+    <div class="sleep-stage" style="--glow:#888">
+      <div class="sleep-fighter sleep-fighter-exit"></div>
+      <div class="sleep-fighter sleep-fighter-active"></div>
+    </div>
+    <div class="sleep-hint">Tap anywhere to wake</div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="roster.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
