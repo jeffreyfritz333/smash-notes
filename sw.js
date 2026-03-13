@@ -1,5 +1,5 @@
 const CACHE_NAME = 'smash-notes-v1';
-const ASSETS = ['/', '/index.html', '/style.css', '/app.js', '/roster.js'];
+const ASSETS = ['./', 'index.html', 'style.css', 'app.js', 'roster.js'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE_NAME).then(c => c.addAll(ASSETS)));
