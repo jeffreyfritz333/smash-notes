@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg-Bayonetta" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#090010"/>
+      <stop offset="45%" stop-color="#22003a"/>
+      <stop offset="100%" stop-color="#3a0005"/>
+    </linearGradient>
+    <radialGradient id="glow-Bayonetta" cx="50%" cy="44%" r="52%">
+      <stop offset="0%" stop-color="#814da8" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#ee4d59" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#ee4d59" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="emb-Bayonetta" x1="80" y1="20" x2="140" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#a580c1"/>
+      <stop offset="100%" stop-color="#d7c7e4"/>
+    </linearGradient>
+    <linearGradient id="accent-Bayonetta" x1="0" y1="200" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#e60012" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#e60012" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip-Bayonetta">
+      <rect width="200" height="200" rx="28"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#clip-Bayonetta)">
+    <rect width="200" height="200" fill="url(#bg-Bayonetta)"/>
+    <ellipse cx="100" cy="88" rx="110" ry="100" fill="url(#glow-Bayonetta)"/>
+
+    <!-- Accent color wash -->
+    <rect width="200" height="200" fill="url(#accent-Bayonetta)"/>
+
+    <!-- Emblem -->
+    <g fill="url(#emb-Bayonetta)" opacity="0.92">
+      <path d="M100 88 Q60 44 38 64 Q18 84 56 108z"/>
+     <path d="M100 88 Q140 44 162 64 Q182 84 144 108z"/>
+     <path d="M100 96 Q66 128 48 148 Q42 162 68 142 Q86 128 100 120z" opacity="0.7"/>
+     <path d="M100 96 Q134 128 152 148 Q158 162 132 142 Q114 128 100 120z" opacity="0.7"/>
+     <circle cx="100" cy="92" r="6"/>
+    </g>
+  </g>
+
+  <!-- Border with primary color -->
+  <rect width="200" height="200" rx="28" fill="none" stroke="#4b0082" stroke-width="3" opacity="0.45"/>
+</svg>

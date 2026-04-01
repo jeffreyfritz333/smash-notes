@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg-Pichu" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1d1900"/>
+      <stop offset="45%" stop-color="#6e5f00"/>
+      <stop offset="100%" stop-color="#3a0005"/>
+    </linearGradient>
+    <radialGradient id="glow-Pichu" cx="50%" cy="44%" r="52%">
+      <stop offset="0%" stop-color="#f8e04d" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#ee4d59" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#ee4d59" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="emb-Pichu" x1="80" y1="20" x2="140" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#e9c800"/>
+      <stop offset="100%" stop-color="#f7da26"/>
+    </linearGradient>
+    <linearGradient id="accent-Pichu" x1="0" y1="200" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#e60012" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#e60012" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip-Pichu">
+      <rect width="200" height="200" rx="28"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#clip-Pichu)">
+    <rect width="200" height="200" fill="url(#bg-Pichu)"/>
+    <ellipse cx="100" cy="88" rx="110" ry="100" fill="url(#glow-Pichu)"/>
+
+    <!-- Accent color wash -->
+    <rect width="200" height="200" fill="url(#accent-Pichu)"/>
+
+    <!-- Emblem -->
+    <g fill="url(#emb-Pichu)" opacity="0.92">
+      <polygon points="92,38 78,88 98,88 72,162 136,98 112,98 130,48"/>
+     <path d="M88 160 Q100 142 112 160 Q100 178 88 160z" opacity="0.5"/>
+    </g>
+  </g>
+
+  <!-- Border with primary color -->
+  <rect width="200" height="200" rx="28" fill="none" stroke="#f5d300" stroke-width="3" opacity="0.45"/>
+</svg>

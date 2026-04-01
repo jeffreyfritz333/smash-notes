@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg-Villager" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0f180e"/>
+      <stop offset="45%" stop-color="#385935"/>
+      <stop offset="100%" stop-color="#231105"/>
+    </linearGradient>
+    <radialGradient id="glow-Villager" cx="50%" cy="44%" r="52%">
+      <stop offset="0%" stop-color="#a3d69f" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#ae7d5a" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#ae7d5a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="emb-Villager" x1="80" y1="20" x2="140" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#bee2bb"/>
+      <stop offset="100%" stop-color="#e2f2e1"/>
+    </linearGradient>
+    <linearGradient id="accent-Villager" x1="0" y1="200" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#8b4513" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#8b4513" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip-Villager">
+      <rect width="200" height="200" rx="28"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#clip-Villager)">
+    <rect width="200" height="200" fill="url(#bg-Villager)"/>
+    <ellipse cx="100" cy="88" rx="110" ry="100" fill="url(#glow-Villager)"/>
+
+    <!-- Accent color wash -->
+    <rect width="200" height="200" fill="url(#accent-Villager)"/>
+
+    <!-- Emblem -->
+    <g fill="url(#emb-Villager)" opacity="0.92">
+      <path d="M100 28c48 18 78 66 64 118-10 30-42 34-64 18-22 16-54 12-64-18C22 94 52 46 100 28z"/>
+     <line x1="100" y1="52" x2="100" y2="156" stroke="rgba(0,0,0,0.1)" stroke-width="4" fill="none"/>
+     <line x1="78" y1="88" x2="100" y2="72" stroke="rgba(0,0,0,0.08)" stroke-width="3" fill="none"/>
+     <line x1="122" y1="88" x2="100" y2="72" stroke="rgba(0,0,0,0.08)" stroke-width="3" fill="none"/>
+    </g>
+  </g>
+
+  <!-- Border with primary color -->
+  <rect width="200" height="200" rx="28" fill="none" stroke="#7cc576" stroke-width="3" opacity="0.45"/>
+</svg>

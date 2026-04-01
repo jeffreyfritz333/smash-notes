@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg-Byleth" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#03030d"/>
+      <stop offset="45%" stop-color="#0c0c31"/>
+      <stop offset="100%" stop-color="#3a0005"/>
+    </linearGradient>
+    <radialGradient id="glow-Byleth" cx="50%" cy="44%" r="52%">
+      <stop offset="0%" stop-color="#5f5f98" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#ee4d59" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#ee4d59" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="emb-Byleth" x1="80" y1="20" x2="140" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#8d8db6"/>
+      <stop offset="100%" stop-color="#cdcddf"/>
+    </linearGradient>
+    <linearGradient id="accent-Byleth" x1="0" y1="200" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#e60012" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#e60012" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip-Byleth">
+      <rect width="200" height="200" rx="28"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#clip-Byleth)">
+    <rect width="200" height="200" fill="url(#bg-Byleth)"/>
+    <ellipse cx="100" cy="88" rx="110" ry="100" fill="url(#glow-Byleth)"/>
+
+    <!-- Accent color wash -->
+    <rect width="200" height="200" fill="url(#accent-Byleth)"/>
+
+    <!-- Emblem -->
+    <g fill="url(#emb-Byleth)" stroke="url(#emb-Byleth)" opacity="0.92">
+      <circle cx="100" cy="96" r="52" fill="none" stroke="currentColor" stroke-width="8"/>
+     <polygon points="100,50 108,80 138,82 114,102 122,132 100,114 78,132 86,102 62,82 92,80"/>
+     <circle cx="100" cy="96" r="16" opacity="0.35"/>
+    </g>
+  </g>
+
+  <!-- Border with primary color -->
+  <rect width="200" height="200" rx="28" fill="none" stroke="#1a1a6c" stroke-width="3" opacity="0.45"/>
+</svg>

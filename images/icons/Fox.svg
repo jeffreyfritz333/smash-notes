@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg-Fox" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1e1204"/>
+      <stop offset="45%" stop-color="#6f420d"/>
+      <stop offset="100%" stop-color="#07160d"/>
+    </linearGradient>
+    <radialGradient id="glow-Fox" cx="50%" cy="44%" r="52%">
+      <stop offset="0%" stop-color="#f9b362" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#5f8970" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#5f8970" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="emb-Fox" x1="80" y1="20" x2="140" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#fbc98f"/>
+      <stop offset="100%" stop-color="#fde7ce"/>
+    </linearGradient>
+    <linearGradient id="accent-Fox" x1="0" y1="200" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1a5632" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#1a5632" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip-Fox">
+      <rect width="200" height="200" rx="28"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#clip-Fox)">
+    <rect width="200" height="200" fill="url(#bg-Fox)"/>
+    <ellipse cx="100" cy="88" rx="110" ry="100" fill="url(#glow-Fox)"/>
+
+    <!-- Accent color wash -->
+    <rect width="200" height="200" fill="url(#accent-Fox)"/>
+
+    <!-- Emblem -->
+    <g fill="url(#emb-Fox)" opacity="0.92">
+      <polygon points="100,28 50,160 76,120 100,140 124,120 150,160"/>
+     <polygon points="100,62 78,130 100,116 122,130" opacity="0.25"/>
+    </g>
+  </g>
+
+  <!-- Border with primary color -->
+  <rect width="200" height="200" rx="28" fill="none" stroke="#f7931e" stroke-width="3" opacity="0.45"/>
+</svg>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg-Palutena" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#00140a"/>
+      <stop offset="45%" stop-color="#004b24"/>
+      <stop offset="100%" stop-color="#3d3500"/>
+    </linearGradient>
+    <radialGradient id="glow-Palutena" cx="50%" cy="44%" r="52%">
+      <stop offset="0%" stop-color="#4dc185" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#f8e04d" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#f8e04d" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="emb-Palutena" x1="80" y1="20" x2="140" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#80d3a8"/>
+      <stop offset="100%" stop-color="#c7ebd9"/>
+    </linearGradient>
+    <linearGradient id="accent-Palutena" x1="0" y1="200" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f5d300" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#f5d300" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip-Palutena">
+      <rect width="200" height="200" rx="28"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#clip-Palutena)">
+    <rect width="200" height="200" fill="url(#bg-Palutena)"/>
+    <ellipse cx="100" cy="88" rx="110" ry="100" fill="url(#glow-Palutena)"/>
+
+    <!-- Accent color wash -->
+    <rect width="200" height="200" fill="url(#accent-Palutena)"/>
+
+    <!-- Emblem -->
+    <g fill="url(#emb-Palutena)" stroke="url(#emb-Palutena)" opacity="0.92">
+      <rect x="94" y="44" width="12" height="122" rx="4"/>
+     <circle cx="100" cy="36" r="18"/>
+     <circle cx="100" cy="36" r="10" opacity="0.3"/>
+     <circle cx="100" cy="36" r="4" opacity="0.2"/>
+     <path d="M56 28 A44 44 0 0 1 144 28" fill="none" stroke="currentColor" stroke-width="6" opacity="0.5"/>
+    </g>
+  </g>
+
+  <!-- Border with primary color -->
+  <rect width="200" height="200" rx="28" fill="none" stroke="#00a651" stroke-width="3" opacity="0.45"/>
+</svg>

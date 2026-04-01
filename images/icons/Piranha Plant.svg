@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg-Piranha_Plant" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#041104"/>
+      <stop offset="45%" stop-color="#0f3f0f"/>
+      <stop offset="100%" stop-color="#3a0005"/>
+    </linearGradient>
+    <radialGradient id="glow-Piranha_Plant" cx="50%" cy="44%" r="52%">
+      <stop offset="0%" stop-color="#64ae64" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#ee4d59" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#ee4d59" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="emb-Piranha_Plant" x1="80" y1="20" x2="140" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#91c591"/>
+      <stop offset="100%" stop-color="#cee5ce"/>
+    </linearGradient>
+    <linearGradient id="accent-Piranha_Plant" x1="0" y1="200" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#e60012" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#e60012" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip-Piranha_Plant">
+      <rect width="200" height="200" rx="28"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#clip-Piranha_Plant)">
+    <rect width="200" height="200" fill="url(#bg-Piranha_Plant)"/>
+    <ellipse cx="100" cy="88" rx="110" ry="100" fill="url(#glow-Piranha_Plant)"/>
+
+    <!-- Accent color wash -->
+    <rect width="200" height="200" fill="url(#accent-Piranha_Plant)"/>
+
+    <!-- Emblem -->
+    <g fill="url(#emb-Piranha_Plant)" opacity="0.92">
+      <rect x="66" y="118" width="68" height="42" rx="6"/>
+     <rect x="60" y="114" width="80" height="12" rx="4" opacity="0.6"/>
+     <ellipse cx="100" cy="80" rx="40" ry="36"/>
+     <ellipse cx="100" cy="86" rx="28" ry="20" opacity="0.25"/>
+     <polygon points="68,54 78,70 58,70"/>
+     <polygon points="132,54 122,70 142,70"/>
+    </g>
+  </g>
+
+  <!-- Border with primary color -->
+  <rect width="200" height="200" rx="28" fill="none" stroke="#228b22" stroke-width="3" opacity="0.45"/>
+</svg>

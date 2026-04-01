@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg-Samus" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1d1404"/>
+      <stop offset="45%" stop-color="#6e4b10"/>
+      <stop offset="100%" stop-color="#092309"/>
+    </linearGradient>
+    <radialGradient id="glow-Samus" cx="50%" cy="44%" r="52%">
+      <stop offset="0%" stop-color="#f8c165" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#64ae64" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#64ae64" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="emb-Samus" x1="80" y1="20" x2="140" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#fad391"/>
+      <stop offset="100%" stop-color="#fdebcf"/>
+    </linearGradient>
+    <linearGradient id="accent-Samus" x1="0" y1="200" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#228b22" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#228b22" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip-Samus">
+      <rect width="200" height="200" rx="28"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#clip-Samus)">
+    <rect width="200" height="200" fill="url(#bg-Samus)"/>
+    <ellipse cx="100" cy="88" rx="110" ry="100" fill="url(#glow-Samus)"/>
+
+    <!-- Accent color wash -->
+    <rect width="200" height="200" fill="url(#accent-Samus)"/>
+
+    <!-- Emblem -->
+    <g fill="url(#emb-Samus)" opacity="0.92">
+      <path d="M60 56h80v28c0 36-18 60-40 76-22-16-40-40-40-76z"/>
+     <rect x="58" y="56" width="84" height="16" rx="4" opacity="0.4"/>
+     <ellipse cx="100" cy="82" rx="24" ry="10" opacity="0.3"/>
+    </g>
+  </g>
+
+  <!-- Border with primary color -->
+  <rect width="200" height="200" rx="28" fill="none" stroke="#f5a623" stroke-width="3" opacity="0.45"/>
+</svg>

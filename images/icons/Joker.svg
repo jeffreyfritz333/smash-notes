@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg-Joker" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1c0002"/>
+      <stop offset="45%" stop-color="#670008"/>
+      <stop offset="100%" stop-color="#0d0d0d"/>
+    </linearGradient>
+    <radialGradient id="glow-Joker" cx="50%" cy="44%" r="52%">
+      <stop offset="0%" stop-color="#ee4d59" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#707070" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#707070" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="emb-Joker" x1="80" y1="20" x2="140" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f38089"/>
+      <stop offset="100%" stop-color="#fac7cb"/>
+    </linearGradient>
+    <linearGradient id="accent-Joker" x1="0" y1="200" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#333333" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#333333" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip-Joker">
+      <rect width="200" height="200" rx="28"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#clip-Joker)">
+    <rect width="200" height="200" fill="url(#bg-Joker)"/>
+    <ellipse cx="100" cy="88" rx="110" ry="100" fill="url(#glow-Joker)"/>
+
+    <!-- Accent color wash -->
+    <rect width="200" height="200" fill="url(#accent-Joker)"/>
+
+    <!-- Emblem -->
+    <g fill="url(#emb-Joker)" opacity="0.92">
+      <path d="M40 92 Q40 56 100 44 Q160 56 160 92 Q160 108 140 116 L130 104 Q100 116 70 104 L60 116 Q40 108 40 92z"/>
+     <ellipse cx="76" cy="88" rx="16" ry="12" opacity="0.3"/>
+     <ellipse cx="124" cy="88" rx="16" ry="12" opacity="0.3"/>
+    </g>
+  </g>
+
+  <!-- Border with primary color -->
+  <rect width="200" height="200" rx="28" fill="none" stroke="#e60012" stroke-width="3" opacity="0.45"/>
+</svg>

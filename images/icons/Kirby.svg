@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg-Kirby" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1f1618"/>
+      <stop offset="45%" stop-color="#735259"/>
+      <stop offset="100%" stop-color="#3a0010"/>
+    </linearGradient>
+    <radialGradient id="glow-Kirby" cx="50%" cy="44%" r="52%">
+      <stop offset="0%" stop-color="#ffcdd6" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#ee4d79" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#ee4d79" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="emb-Kirby" x1="80" y1="20" x2="140" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f2aebb"/>
+      <stop offset="100%" stop-color="#ffc2ce"/>
+    </linearGradient>
+    <linearGradient id="accent-Kirby" x1="0" y1="200" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#e60040" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#e60040" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip-Kirby">
+      <rect width="200" height="200" rx="28"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#clip-Kirby)">
+    <rect width="200" height="200" fill="url(#bg-Kirby)"/>
+    <ellipse cx="100" cy="88" rx="110" ry="100" fill="url(#glow-Kirby)"/>
+
+    <!-- Accent color wash -->
+    <rect width="200" height="200" fill="url(#accent-Kirby)"/>
+
+    <!-- Emblem -->
+    <g fill="url(#emb-Kirby)" opacity="0.92">
+      <circle cx="100" cy="82" r="50"/>
+     <ellipse cx="76" cy="136" rx="18" ry="14"/>
+     <ellipse cx="124" cy="136" rx="18" ry="14"/>
+     <circle cx="82" cy="74" r="10" opacity="0.3"/>
+     <circle cx="118" cy="74" r="10" opacity="0.3"/>
+    </g>
+  </g>
+
+  <!-- Border with primary color -->
+  <rect width="200" height="200" rx="28" fill="none" stroke="#ffb7c5" stroke-width="3" opacity="0.45"/>
+</svg>

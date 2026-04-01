@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg-Inkling" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1f0d06"/>
+      <stop offset="45%" stop-color="#733018"/>
+      <stop offset="100%" stop-color="#003040"/>
+    </linearGradient>
+    <radialGradient id="glow-Inkling" cx="50%" cy="44%" r="52%">
+      <stop offset="0%" stop-color="#ff9772" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#4dd2ff" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#4dd2ff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="emb-Inkling" x1="80" y1="20" x2="140" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffb59a"/>
+      <stop offset="100%" stop-color="#ffded3"/>
+    </linearGradient>
+    <linearGradient id="accent-Inkling" x1="0" y1="200" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#00bfff" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#00bfff" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip-Inkling">
+      <rect width="200" height="200" rx="28"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#clip-Inkling)">
+    <rect width="200" height="200" fill="url(#bg-Inkling)"/>
+    <ellipse cx="100" cy="88" rx="110" ry="100" fill="url(#glow-Inkling)"/>
+
+    <!-- Accent color wash -->
+    <rect width="200" height="200" fill="url(#accent-Inkling)"/>
+
+    <!-- Emblem -->
+    <g fill="url(#emb-Inkling)" opacity="0.92">
+      <ellipse cx="100" cy="100" rx="46" ry="38"/>
+     <path d="M64 72 Q58 40 72 36 Q78 34 76 56" opacity="0.8"/>
+     <path d="M84 66 Q82 38 92 32 Q96 30 94 52" opacity="0.8"/>
+     <path d="M116 66 Q118 38 108 32 Q104 30 106 52" opacity="0.8"/>
+     <path d="M136 72 Q142 40 128 36 Q122 34 124 56" opacity="0.8"/>
+     <circle cx="86" cy="96" r="10" opacity="0.3"/>
+     <circle cx="114" cy="96" r="10" opacity="0.3"/>
+    </g>
+  </g>
+
+  <!-- Border with primary color -->
+  <rect width="200" height="200" rx="28" fill="none" stroke="#ff6b35" stroke-width="3" opacity="0.45"/>
+</svg>

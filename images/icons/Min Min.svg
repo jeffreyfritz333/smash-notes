@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg-Min_Min" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1d1900"/>
+      <stop offset="45%" stop-color="#6e5f00"/>
+      <stop offset="100%" stop-color="#092309"/>
+    </linearGradient>
+    <radialGradient id="glow-Min_Min" cx="50%" cy="44%" r="52%">
+      <stop offset="0%" stop-color="#f8e04d" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#64ae64" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#64ae64" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="emb-Min_Min" x1="80" y1="20" x2="140" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#e9c800"/>
+      <stop offset="100%" stop-color="#f7da26"/>
+    </linearGradient>
+    <linearGradient id="accent-Min_Min" x1="0" y1="200" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#228b22" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#228b22" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip-Min_Min">
+      <rect width="200" height="200" rx="28"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#clip-Min_Min)">
+    <rect width="200" height="200" fill="url(#bg-Min_Min)"/>
+    <ellipse cx="100" cy="88" rx="110" ry="100" fill="url(#glow-Min_Min)"/>
+
+    <!-- Accent color wash -->
+    <rect width="200" height="200" fill="url(#accent-Min_Min)"/>
+
+    <!-- Emblem -->
+    <g fill="url(#emb-Min_Min)" stroke="url(#emb-Min_Min)" opacity="0.92">
+      <ellipse cx="100" cy="120" rx="60" ry="36"/>
+     <path d="M40 112 Q40 72 100 62 Q160 72 160 112" fill="none" stroke="currentColor" stroke-width="8"/>
+     <path d="M72 92 Q84 72 96 92" fill="none" stroke="currentColor" stroke-width="5" opacity="0.5"/>
+     <path d="M104 92 Q116 72 128 92" fill="none" stroke="currentColor" stroke-width="5" opacity="0.5"/>
+    </g>
+  </g>
+
+  <!-- Border with primary color -->
+  <rect width="200" height="200" rx="28" fill="none" stroke="#f5d300" stroke-width="3" opacity="0.45"/>
+</svg>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg-Lucina" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#080d1b"/>
+      <stop offset="45%" stop-color="#1d2f65"/>
+      <stop offset="100%" stop-color="#3d3500"/>
+    </linearGradient>
+    <radialGradient id="glow-Lucina" cx="50%" cy="44%" r="52%">
+      <stop offset="0%" stop-color="#7a96ea" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#f8e04d" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#f8e04d" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="emb-Lucina" x1="80" y1="20" x2="140" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#a0b4f0"/>
+      <stop offset="100%" stop-color="#d5def8"/>
+    </linearGradient>
+    <linearGradient id="accent-Lucina" x1="0" y1="200" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f5d300" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#f5d300" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip-Lucina">
+      <rect width="200" height="200" rx="28"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#clip-Lucina)">
+    <rect width="200" height="200" fill="url(#bg-Lucina)"/>
+    <ellipse cx="100" cy="88" rx="110" ry="100" fill="url(#glow-Lucina)"/>
+
+    <!-- Accent color wash -->
+    <rect width="200" height="200" fill="url(#accent-Lucina)"/>
+
+    <!-- Emblem -->
+    <g fill="url(#emb-Lucina)" stroke="url(#emb-Lucina)" opacity="0.92">
+      <ellipse cx="100" cy="90" rx="52" ry="30"/>
+     <path d="M100 66 L100 114" stroke="rgba(0,0,0,0.15)" stroke-width="3" fill="none"/>
+     <circle cx="100" cy="138" r="22"/>
+     <circle cx="100" cy="138" r="12" opacity="0.3"/>
+     <path d="M100 116 L100 122" stroke="currentColor" stroke-width="4" fill="none"/>
+    </g>
+  </g>
+
+  <!-- Border with primary color -->
+  <rect width="200" height="200" rx="28" fill="none" stroke="#4169e1" stroke-width="3" opacity="0.45"/>
+</svg>

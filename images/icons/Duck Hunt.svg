@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg-Duck_Hunt" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#110802"/>
+      <stop offset="45%" stop-color="#3f1f09"/>
+      <stop offset="100%" stop-color="#22343b"/>
+    </linearGradient>
+    <radialGradient id="glow-Duck_Hunt" cx="50%" cy="44%" r="52%">
+      <stop offset="0%" stop-color="#ae7d5a" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#abddf1" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#abddf1" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="emb-Duck_Hunt" x1="80" y1="20" x2="140" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#c5a289"/>
+      <stop offset="100%" stop-color="#e5d6cb"/>
+    </linearGradient>
+    <linearGradient id="accent-Duck_Hunt" x1="0" y1="200" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#87ceeb" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#87ceeb" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip-Duck_Hunt">
+      <rect width="200" height="200" rx="28"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#clip-Duck_Hunt)">
+    <rect width="200" height="200" fill="url(#bg-Duck_Hunt)"/>
+    <ellipse cx="100" cy="88" rx="110" ry="100" fill="url(#glow-Duck_Hunt)"/>
+
+    <!-- Accent color wash -->
+    <rect width="200" height="200" fill="url(#accent-Duck_Hunt)"/>
+
+    <!-- Emblem -->
+    <g fill="url(#emb-Duck_Hunt)" stroke="url(#emb-Duck_Hunt)" opacity="0.92">
+      <circle cx="100" cy="90" r="38"/>
+     <ellipse cx="100" cy="140" rx="28" ry="16"/>
+     <path d="M138 80 L170 68 L170 78 L140 88z"/>
+     <circle cx="112" cy="80" r="6" opacity="0.35"/>
+     <path d="M76 54 Q82 32 98 38" fill="none" stroke="currentColor" stroke-width="4" opacity="0.4"/>
+    </g>
+  </g>
+
+  <!-- Border with primary color -->
+  <rect width="200" height="200" rx="28" fill="none" stroke="#8b4513" stroke-width="3" opacity="0.45"/>
+</svg>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg-Sora" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1d1404"/>
+      <stop offset="45%" stop-color="#6e4b10"/>
+      <stop offset="100%" stop-color="#101a38"/>
+    </linearGradient>
+    <radialGradient id="glow-Sora" cx="50%" cy="44%" r="52%">
+      <stop offset="0%" stop-color="#f8c165" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#7a96ea" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#7a96ea" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="emb-Sora" x1="80" y1="20" x2="140" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#fad391"/>
+      <stop offset="100%" stop-color="#fdebcf"/>
+    </linearGradient>
+    <linearGradient id="accent-Sora" x1="0" y1="200" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4169e1" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#4169e1" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip-Sora">
+      <rect width="200" height="200" rx="28"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#clip-Sora)">
+    <rect width="200" height="200" fill="url(#bg-Sora)"/>
+    <ellipse cx="100" cy="88" rx="110" ry="100" fill="url(#glow-Sora)"/>
+
+    <!-- Accent color wash -->
+    <rect width="200" height="200" fill="url(#accent-Sora)"/>
+
+    <!-- Emblem -->
+    <g fill="url(#emb-Sora)" stroke="url(#emb-Sora)" opacity="0.92">
+      <rect x="92" y="50" width="16" height="96" rx="4"/>
+     <circle cx="100" cy="40" r="22" fill="none" stroke="currentColor" stroke-width="10"/>
+     <rect x="72" y="142" width="56" height="14" rx="5"/>
+     <rect x="68" y="132" width="14" height="30" rx="4"/>
+     <rect x="118" y="132" width="14" height="30" rx="4"/>
+    </g>
+  </g>
+
+  <!-- Border with primary color -->
+  <rect width="200" height="200" rx="28" fill="none" stroke="#f5a623" stroke-width="3" opacity="0.45"/>
+</svg>

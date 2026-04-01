@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg-Lucas" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1d1404"/>
+      <stop offset="45%" stop-color="#6e4b10"/>
+      <stop offset="100%" stop-color="#3a0005"/>
+    </linearGradient>
+    <radialGradient id="glow-Lucas" cx="50%" cy="44%" r="52%">
+      <stop offset="0%" stop-color="#f8c165" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#ee4d59" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#ee4d59" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="emb-Lucas" x1="80" y1="20" x2="140" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#fad391"/>
+      <stop offset="100%" stop-color="#fdebcf"/>
+    </linearGradient>
+    <linearGradient id="accent-Lucas" x1="0" y1="200" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#e60012" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#e60012" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip-Lucas">
+      <rect width="200" height="200" rx="28"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#clip-Lucas)">
+    <rect width="200" height="200" fill="url(#bg-Lucas)"/>
+    <ellipse cx="100" cy="88" rx="110" ry="100" fill="url(#glow-Lucas)"/>
+
+    <!-- Accent color wash -->
+    <rect width="200" height="200" fill="url(#accent-Lucas)"/>
+
+    <!-- Emblem -->
+    <g fill="url(#emb-Lucas)" opacity="0.92">
+      <circle cx="100" cy="88" r="22"/>
+     <ellipse cx="100" cy="58" rx="12" ry="16"/>
+     <ellipse cx="128" cy="72" rx="12" ry="16" transform="rotate(45 128 72)"/>
+     <ellipse cx="136" cy="96" rx="12" ry="16" transform="rotate(90 136 96)"/>
+     <ellipse cx="124" cy="118" rx="12" ry="16" transform="rotate(135 124 118)"/>
+     <ellipse cx="100" cy="118" rx="12" ry="16"/>
+     <ellipse cx="76" cy="118" rx="12" ry="16" transform="rotate(45 76 118)"/>
+     <ellipse cx="64" cy="96" rx="12" ry="16" transform="rotate(90 64 96)"/>
+     <ellipse cx="72" cy="72" rx="12" ry="16" transform="rotate(135 72 72)"/>
+     <rect x="94" y="132" width="12" height="36" rx="4"/>
+    </g>
+  </g>
+
+  <!-- Border with primary color -->
+  <rect width="200" height="200" rx="28" fill="none" stroke="#f5a623" stroke-width="3" opacity="0.45"/>
+</svg>

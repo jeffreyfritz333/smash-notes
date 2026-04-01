@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg-Pit" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1d1d1d"/>
+      <stop offset="45%" stop-color="#6c6c6c"/>
+      <stop offset="100%" stop-color="#3d3500"/>
+    </linearGradient>
+    <radialGradient id="glow-Pit" cx="50%" cy="44%" r="52%">
+      <stop offset="0%" stop-color="#f5f5f5" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#f8e04d" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#f8e04d" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="emb-Pit" x1="80" y1="20" x2="140" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#e4e4e4"/>
+      <stop offset="100%" stop-color="#f2f2f2"/>
+    </linearGradient>
+    <linearGradient id="accent-Pit" x1="0" y1="200" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f5d300" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#f5d300" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip-Pit">
+      <rect width="200" height="200" rx="28"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#clip-Pit)">
+    <rect width="200" height="200" fill="url(#bg-Pit)"/>
+    <ellipse cx="100" cy="88" rx="110" ry="100" fill="url(#glow-Pit)"/>
+
+    <!-- Accent color wash -->
+    <rect width="200" height="200" fill="url(#accent-Pit)"/>
+
+    <!-- Emblem -->
+    <g fill="url(#emb-Pit)" stroke="url(#emb-Pit)" opacity="0.92">
+      <path d="M48 56 Q72 28 100 56 Q128 28 152 56" fill="none" stroke="currentColor" stroke-width="10"/>
+     <rect x="94" y="56" width="12" height="100" rx="4"/>
+     <polygon points="100,50 88,66 112,66"/>
+    </g>
+  </g>
+
+  <!-- Border with primary color -->
+  <rect width="200" height="200" rx="28" fill="none" stroke="#f0f0f0" stroke-width="3" opacity="0.45"/>
+</svg>

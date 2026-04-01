@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg-Mii_Brawler" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1d1404"/>
+      <stop offset="45%" stop-color="#6e4b10"/>
+      <stop offset="100%" stop-color="#3a0005"/>
+    </linearGradient>
+    <radialGradient id="glow-Mii_Brawler" cx="50%" cy="44%" r="52%">
+      <stop offset="0%" stop-color="#f8c165" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#ee4d59" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#ee4d59" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="emb-Mii_Brawler" x1="80" y1="20" x2="140" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#fad391"/>
+      <stop offset="100%" stop-color="#fdebcf"/>
+    </linearGradient>
+    <linearGradient id="accent-Mii_Brawler" x1="0" y1="200" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#e60012" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#e60012" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip-Mii_Brawler">
+      <rect width="200" height="200" rx="28"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#clip-Mii_Brawler)">
+    <rect width="200" height="200" fill="url(#bg-Mii_Brawler)"/>
+    <ellipse cx="100" cy="88" rx="110" ry="100" fill="url(#glow-Mii_Brawler)"/>
+
+    <!-- Accent color wash -->
+    <rect width="200" height="200" fill="url(#accent-Mii_Brawler)"/>
+
+    <!-- Emblem -->
+    <g fill="url(#emb-Mii_Brawler)" opacity="0.92">
+      <circle cx="100" cy="92" r="54"/>
+     <circle cx="80" cy="82" r="10" opacity="0.3"/>
+     <circle cx="120" cy="82" r="10" opacity="0.3"/>
+     <ellipse cx="100" cy="110" rx="14" ry="8" opacity="0.2"/>
+    </g>
+  </g>
+
+  <!-- Border with primary color -->
+  <rect width="200" height="200" rx="28" fill="none" stroke="#f5a623" stroke-width="3" opacity="0.45"/>
+</svg>

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg-Terry" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1c0002"/>
+      <stop offset="45%" stop-color="#670008"/>
+      <stop offset="100%" stop-color="#00162e"/>
+    </linearGradient>
+    <radialGradient id="glow-Terry" cx="50%" cy="44%" r="52%">
+      <stop offset="0%" stop-color="#ee4d59" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#4d89cd" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#4d89cd" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="emb-Terry" x1="80" y1="20" x2="140" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f38089"/>
+      <stop offset="100%" stop-color="#fac7cb"/>
+    </linearGradient>
+    <linearGradient id="accent-Terry" x1="0" y1="200" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0057b8" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#0057b8" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip-Terry">
+      <rect width="200" height="200" rx="28"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#clip-Terry)">
+    <rect width="200" height="200" fill="url(#bg-Terry)"/>
+    <ellipse cx="100" cy="88" rx="110" ry="100" fill="url(#glow-Terry)"/>
+
+    <!-- Accent color wash -->
+    <rect width="200" height="200" fill="url(#accent-Terry)"/>
+
+    <!-- Emblem -->
+    <g fill="url(#emb-Terry)" opacity="0.92">
+      <path d="M48 78c0-28 24-48 52-48s52 20 52 48z"/>
+     <rect x="38" y="72" width="124" height="16" rx="8"/>
+     <polygon points="52,120 100,96 148,120 148,160 52,160" opacity="0.6"/>
+     <polygon points="66,134 100,114 134,134 134,152 66,152" opacity="0.3"/>
+    </g>
+  </g>
+
+  <!-- Border with primary color -->
+  <rect width="200" height="200" rx="28" fill="none" stroke="#e60012" stroke-width="3" opacity="0.45"/>
+</svg>

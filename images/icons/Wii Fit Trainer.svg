@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg-Wii_Fit_Trainer" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#10191c"/>
+      <stop offset="45%" stop-color="#3d5d6a"/>
+      <stop offset="100%" stop-color="#003040"/>
+    </linearGradient>
+    <radialGradient id="glow-Wii_Fit_Trainer" cx="50%" cy="44%" r="52%">
+      <stop offset="0%" stop-color="#abddf1" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#4dd2ff" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#4dd2ff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="emb-Wii_Fit_Trainer" x1="80" y1="20" x2="140" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#80c4df"/>
+      <stop offset="100%" stop-color="#99d5ee"/>
+    </linearGradient>
+    <linearGradient id="accent-Wii_Fit_Trainer" x1="0" y1="200" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#00bfff" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#00bfff" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip-Wii_Fit_Trainer">
+      <rect width="200" height="200" rx="28"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#clip-Wii_Fit_Trainer)">
+    <rect width="200" height="200" fill="url(#bg-Wii_Fit_Trainer)"/>
+    <ellipse cx="100" cy="88" rx="110" ry="100" fill="url(#glow-Wii_Fit_Trainer)"/>
+
+    <!-- Accent color wash -->
+    <rect width="200" height="200" fill="url(#accent-Wii_Fit_Trainer)"/>
+
+    <!-- Emblem -->
+    <g fill="url(#emb-Wii_Fit_Trainer)" opacity="0.92">
+      <circle cx="100" cy="36" r="18"/>
+     <rect x="94" y="54" width="12" height="58" rx="4"/>
+     <rect x="94" y="108" width="12" height="60" rx="4" transform="rotate(-5 100 138)"/>
+     <rect x="94" y="108" width="12" height="52" rx="4" transform="rotate(25 100 134)"/>
+     <rect x="56" y="64" width="40" height="10" rx="5" transform="rotate(-20 76 69)"/>
+     <rect x="108" y="58" width="40" height="10" rx="5" transform="rotate(-80 128 63)"/>
+    </g>
+  </g>
+
+  <!-- Border with primary color -->
+  <rect width="200" height="200" rx="28" fill="none" stroke="#87ceeb" stroke-width="3" opacity="0.45"/>
+</svg>

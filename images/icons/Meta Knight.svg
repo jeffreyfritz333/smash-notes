@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg-Meta_Knight" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#03030d"/>
+      <stop offset="45%" stop-color="#0c0c31"/>
+      <stop offset="100%" stop-color="#3d3500"/>
+    </linearGradient>
+    <radialGradient id="glow-Meta_Knight" cx="50%" cy="44%" r="52%">
+      <stop offset="0%" stop-color="#5f5f98" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#f8e04d" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#f8e04d" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="emb-Meta_Knight" x1="80" y1="20" x2="140" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#8d8db6"/>
+      <stop offset="100%" stop-color="#cdcddf"/>
+    </linearGradient>
+    <linearGradient id="accent-Meta_Knight" x1="0" y1="200" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f5d300" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#f5d300" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip-Meta_Knight">
+      <rect width="200" height="200" rx="28"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#clip-Meta_Knight)">
+    <rect width="200" height="200" fill="url(#bg-Meta_Knight)"/>
+    <ellipse cx="100" cy="88" rx="110" ry="100" fill="url(#glow-Meta_Knight)"/>
+
+    <!-- Accent color wash -->
+    <rect width="200" height="200" fill="url(#accent-Meta_Knight)"/>
+
+    <!-- Emblem -->
+    <g fill="url(#emb-Meta_Knight)" opacity="0.92">
+      <path d="M100 56c-30 0-52 22-52 44 0 18 14 34 34 40l18 20 18-20c20-6 34-22 34-40 0-22-22-44-52-44z"/>
+     <path d="M30 86 L70 86 L52 56z" opacity="0.6"/>
+     <path d="M170 86 L130 86 L148 56z" opacity="0.6"/>
+     <rect x="70" y="86" width="24" height="10" rx="5" opacity="0.35"/>
+     <rect x="106" y="86" width="24" height="10" rx="5" opacity="0.35"/>
+    </g>
+  </g>
+
+  <!-- Border with primary color -->
+  <rect width="200" height="200" rx="28" fill="none" stroke="#1a1a6c" stroke-width="3" opacity="0.45"/>
+</svg>

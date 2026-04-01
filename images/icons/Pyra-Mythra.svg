@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg-Pyra_Mythra" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1c0002"/>
+      <stop offset="45%" stop-color="#670008"/>
+      <stop offset="100%" stop-color="#003040"/>
+    </linearGradient>
+    <radialGradient id="glow-Pyra_Mythra" cx="50%" cy="44%" r="52%">
+      <stop offset="0%" stop-color="#ee4d59" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#4dd2ff" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#4dd2ff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="emb-Pyra_Mythra" x1="80" y1="20" x2="140" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f38089"/>
+      <stop offset="100%" stop-color="#fac7cb"/>
+    </linearGradient>
+    <linearGradient id="accent-Pyra_Mythra" x1="0" y1="200" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#00bfff" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#00bfff" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip-Pyra_Mythra">
+      <rect width="200" height="200" rx="28"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#clip-Pyra_Mythra)">
+    <rect width="200" height="200" fill="url(#bg-Pyra_Mythra)"/>
+    <ellipse cx="100" cy="88" rx="110" ry="100" fill="url(#glow-Pyra_Mythra)"/>
+
+    <!-- Accent color wash -->
+    <rect width="200" height="200" fill="url(#accent-Pyra_Mythra)"/>
+
+    <!-- Emblem -->
+    <g fill="url(#emb-Pyra_Mythra)" opacity="0.92">
+      <rect x="92" y="38" width="16" height="88" rx="4"/>
+     <polygon points="100,30 88,50 112,50"/>
+     <rect x="76" y="124" width="48" height="12" rx="4"/>
+     <rect x="88" y="134" width="24" height="24" rx="4"/>
+     <ellipse cx="100" cy="60" rx="30" ry="42" opacity="0.18"/>
+     <ellipse cx="100" cy="54" rx="20" ry="30" opacity="0.14"/>
+     <ellipse cx="100" cy="48" rx="12" ry="20" opacity="0.1"/>
+    </g>
+  </g>
+
+  <!-- Border with primary color -->
+  <rect width="200" height="200" rx="28" fill="none" stroke="#e60012" stroke-width="3" opacity="0.45"/>
+</svg>

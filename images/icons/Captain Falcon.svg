@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg-Captain_Falcon" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#000a16"/>
+      <stop offset="45%" stop-color="#002753"/>
+      <stop offset="100%" stop-color="#3d3500"/>
+    </linearGradient>
+    <radialGradient id="glow-Captain_Falcon" cx="50%" cy="44%" r="52%">
+      <stop offset="0%" stop-color="#4d89cd" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#f8e04d" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#f8e04d" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="emb-Captain_Falcon" x1="80" y1="20" x2="140" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#80abdc"/>
+      <stop offset="100%" stop-color="#c7daef"/>
+    </linearGradient>
+    <linearGradient id="accent-Captain_Falcon" x1="0" y1="200" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f5d300" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#f5d300" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip-Captain_Falcon">
+      <rect width="200" height="200" rx="28"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#clip-Captain_Falcon)">
+    <rect width="200" height="200" fill="url(#bg-Captain_Falcon)"/>
+    <ellipse cx="100" cy="88" rx="110" ry="100" fill="url(#glow-Captain_Falcon)"/>
+
+    <!-- Accent color wash -->
+    <rect width="200" height="200" fill="url(#accent-Captain_Falcon)"/>
+
+    <!-- Emblem -->
+    <g fill="url(#emb-Captain_Falcon)" opacity="0.92">
+      <path d="M100 30 L160 80 L148 90 L168 140 L100 108 L32 140 L52 90 L40 80z"/>
+     <circle cx="100" cy="78" r="14" opacity="0.3"/>
+    </g>
+  </g>
+
+  <!-- Border with primary color -->
+  <rect width="200" height="200" rx="28" fill="none" stroke="#0057b8" stroke-width="3" opacity="0.45"/>
+</svg>

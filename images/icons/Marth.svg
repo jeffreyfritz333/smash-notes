@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg-Marth" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#080d1b"/>
+      <stop offset="45%" stop-color="#1d2f65"/>
+      <stop offset="100%" stop-color="#3d3500"/>
+    </linearGradient>
+    <radialGradient id="glow-Marth" cx="50%" cy="44%" r="52%">
+      <stop offset="0%" stop-color="#7a96ea" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#f8e04d" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#f8e04d" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="emb-Marth" x1="80" y1="20" x2="140" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#a0b4f0"/>
+      <stop offset="100%" stop-color="#d5def8"/>
+    </linearGradient>
+    <linearGradient id="accent-Marth" x1="0" y1="200" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f5d300" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#f5d300" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip-Marth">
+      <rect width="200" height="200" rx="28"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#clip-Marth)">
+    <rect width="200" height="200" fill="url(#bg-Marth)"/>
+    <ellipse cx="100" cy="88" rx="110" ry="100" fill="url(#glow-Marth)"/>
+
+    <!-- Accent color wash -->
+    <rect width="200" height="200" fill="url(#accent-Marth)"/>
+
+    <!-- Emblem -->
+    <g fill="url(#emb-Marth)" opacity="0.92">
+      <path d="M96 26 L104 26 L108 110 L120 130 L100 122 L80 130 L92 110z"/>
+     <polygon points="100,20 92,32 108,32"/>
+     <rect x="76" y="126" width="48" height="10" rx="5"/>
+     <rect x="90" y="134" width="20" height="28" rx="4"/>
+    </g>
+  </g>
+
+  <!-- Border with primary color -->
+  <rect width="200" height="200" rx="28" fill="none" stroke="#4169e1" stroke-width="3" opacity="0.45"/>
+</svg>

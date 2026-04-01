@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg-Daisy" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1d1404"/>
+      <stop offset="45%" stop-color="#6e4b10"/>
+      <stop offset="100%" stop-color="#401b0d"/>
+    </linearGradient>
+    <radialGradient id="glow-Daisy" cx="50%" cy="44%" r="52%">
+      <stop offset="0%" stop-color="#f8c165" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#ff9772" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#ff9772" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="emb-Daisy" x1="80" y1="20" x2="140" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#fad391"/>
+      <stop offset="100%" stop-color="#fdebcf"/>
+    </linearGradient>
+    <linearGradient id="accent-Daisy" x1="0" y1="200" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ff6b35" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#ff6b35" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip-Daisy">
+      <rect width="200" height="200" rx="28"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#clip-Daisy)">
+    <rect width="200" height="200" fill="url(#bg-Daisy)"/>
+    <ellipse cx="100" cy="88" rx="110" ry="100" fill="url(#glow-Daisy)"/>
+
+    <!-- Accent color wash -->
+    <rect width="200" height="200" fill="url(#accent-Daisy)"/>
+
+    <!-- Emblem -->
+    <g fill="url(#emb-Daisy)" opacity="0.92">
+      <circle cx="100" cy="96" r="18"/>
+     <ellipse cx="100" cy="56" rx="16" ry="22"/>
+     <ellipse cx="135" cy="76" rx="16" ry="22" transform="rotate(60 135 76)"/>
+     <ellipse cx="135" cy="116" rx="16" ry="22" transform="rotate(120 135 116)"/>
+     <ellipse cx="100" cy="136" rx="16" ry="22"/>
+     <ellipse cx="65" cy="116" rx="16" ry="22" transform="rotate(60 65 116)"/>
+     <ellipse cx="65" cy="76" rx="16" ry="22" transform="rotate(120 65 76)"/>
+    </g>
+  </g>
+
+  <!-- Border with primary color -->
+  <rect width="200" height="200" rx="28" fill="none" stroke="#f5a623" stroke-width="3" opacity="0.45"/>
+</svg>

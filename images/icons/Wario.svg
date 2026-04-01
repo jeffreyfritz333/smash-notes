@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg-Wario" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1d1900"/>
+      <stop offset="45%" stop-color="#6e5f00"/>
+      <stop offset="100%" stop-color="#1f0b24"/>
+    </linearGradient>
+    <radialGradient id="glow-Wario" cx="50%" cy="44%" r="52%">
+      <stop offset="0%" stop-color="#f8e04d" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#a36cb0" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#a36cb0" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="emb-Wario" x1="80" y1="20" x2="140" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#e9c800"/>
+      <stop offset="100%" stop-color="#f7da26"/>
+    </linearGradient>
+    <linearGradient id="accent-Wario" x1="0" y1="200" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#7b2d8e" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#7b2d8e" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip-Wario">
+      <rect width="200" height="200" rx="28"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#clip-Wario)">
+    <rect width="200" height="200" fill="url(#bg-Wario)"/>
+    <ellipse cx="100" cy="88" rx="110" ry="100" fill="url(#glow-Wario)"/>
+
+    <!-- Accent color wash -->
+    <rect width="200" height="200" fill="url(#accent-Wario)"/>
+
+    <!-- Emblem -->
+    <g fill="url(#emb-Wario)" stroke="url(#emb-Wario)" opacity="0.92">
+      <ellipse cx="100" cy="108" rx="48" ry="42"/>
+     <path d="M76 72c0-16 10-28 24-28s24 12 24 28" fill="none" stroke="currentColor" stroke-width="6" opacity="0.4"/>
+     <line x1="100" y1="108" x2="100" y2="148" stroke="rgba(0,0,0,0.1)" stroke-width="3" fill="none"/>
+     <ellipse cx="100" cy="60" rx="8" ry="12"/>
+    </g>
+  </g>
+
+  <!-- Border with primary color -->
+  <rect width="200" height="200" rx="28" fill="none" stroke="#f5d300" stroke-width="3" opacity="0.45"/>
+</svg>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg-Pokemon_Trainer" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1c0002"/>
+      <stop offset="45%" stop-color="#670008"/>
+      <stop offset="100%" stop-color="#404040"/>
+    </linearGradient>
+    <radialGradient id="glow-Pokemon_Trainer" cx="50%" cy="44%" r="52%">
+      <stop offset="0%" stop-color="#ee4d59" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#ffffff" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="emb-Pokemon_Trainer" x1="80" y1="20" x2="140" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f38089"/>
+      <stop offset="100%" stop-color="#fac7cb"/>
+    </linearGradient>
+    <linearGradient id="accent-Pokemon_Trainer" x1="0" y1="200" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip-Pokemon_Trainer">
+      <rect width="200" height="200" rx="28"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#clip-Pokemon_Trainer)">
+    <rect width="200" height="200" fill="url(#bg-Pokemon_Trainer)"/>
+    <ellipse cx="100" cy="88" rx="110" ry="100" fill="url(#glow-Pokemon_Trainer)"/>
+
+    <!-- Accent color wash -->
+    <rect width="200" height="200" fill="url(#accent-Pokemon_Trainer)"/>
+
+    <!-- Emblem -->
+    <g fill="url(#emb-Pokemon_Trainer)" opacity="0.92">
+      <path d="M38 100a62 62 0 0 1 124 0H130a30 30 0 0 0-60 0z"/>
+     <path d="M38 100a62 62 0 0 0 124 0H130a30 30 0 0 1-60 0z" opacity="0.4"/>
+     <circle cx="100" cy="100" r="14"/>
+     <rect x="36" y="93" width="128" height="14" rx="7" opacity="0.55"/>
+     <path d="M60 56 L140 56 L148 72 L52 72z" opacity="0.5"/>
+    </g>
+  </g>
+
+  <!-- Border with primary color -->
+  <rect width="200" height="200" rx="28" fill="none" stroke="#e60012" stroke-width="3" opacity="0.45"/>
+</svg>

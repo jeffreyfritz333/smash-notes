@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg-Toon_Link" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#00140a"/>
+      <stop offset="45%" stop-color="#004b24"/>
+      <stop offset="100%" stop-color="#3d3500"/>
+    </linearGradient>
+    <radialGradient id="glow-Toon_Link" cx="50%" cy="44%" r="52%">
+      <stop offset="0%" stop-color="#4dc185" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#f8e04d" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#f8e04d" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="emb-Toon_Link" x1="80" y1="20" x2="140" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#80d3a8"/>
+      <stop offset="100%" stop-color="#c7ebd9"/>
+    </linearGradient>
+    <linearGradient id="accent-Toon_Link" x1="0" y1="200" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f5d300" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#f5d300" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip-Toon_Link">
+      <rect width="200" height="200" rx="28"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#clip-Toon_Link)">
+    <rect width="200" height="200" fill="url(#bg-Toon_Link)"/>
+    <ellipse cx="100" cy="88" rx="110" ry="100" fill="url(#glow-Toon_Link)"/>
+
+    <!-- Accent color wash -->
+    <rect width="200" height="200" fill="url(#accent-Toon_Link)"/>
+
+    <!-- Emblem -->
+    <g fill="url(#emb-Toon_Link)" stroke="url(#emb-Toon_Link)" opacity="0.92">
+      <path d="M100 36 Q140 36 148 76 Q156 116 120 136 Q84 156 60 128 Q36 100 60 68 Q84 36 100 36z" fill="none" stroke="currentColor" stroke-width="10" opacity="0.85"/>
+     <circle cx="100" cy="36" r="12"/>
+    </g>
+  </g>
+
+  <!-- Border with primary color -->
+  <rect width="200" height="200" rx="28" fill="none" stroke="#00a651" stroke-width="3" opacity="0.45"/>
+</svg>

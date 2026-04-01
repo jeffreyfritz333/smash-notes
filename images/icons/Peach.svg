@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg-Peach" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1f0d13"/>
+      <stop offset="45%" stop-color="#733047"/>
+      <stop offset="100%" stop-color="#3d3500"/>
+    </linearGradient>
+    <radialGradient id="glow-Peach" cx="50%" cy="44%" r="52%">
+      <stop offset="0%" stop-color="#ff97ba" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#f8e04d" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#f8e04d" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="emb-Peach" x1="80" y1="20" x2="140" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffb5ce"/>
+      <stop offset="100%" stop-color="#ffdee9"/>
+    </linearGradient>
+    <linearGradient id="accent-Peach" x1="0" y1="200" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f5d300" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#f5d300" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip-Peach">
+      <rect width="200" height="200" rx="28"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#clip-Peach)">
+    <rect width="200" height="200" fill="url(#bg-Peach)"/>
+    <ellipse cx="100" cy="88" rx="110" ry="100" fill="url(#glow-Peach)"/>
+
+    <!-- Accent color wash -->
+    <rect width="200" height="200" fill="url(#accent-Peach)"/>
+
+    <!-- Emblem -->
+    <g fill="url(#emb-Peach)" opacity="0.92">
+      <path d="M44 128l16-50 14 24 26-40 26 40 14-24 16 50z"/>
+     <rect x="40" y="128" width="120" height="24" rx="6"/>
+     <circle cx="100" cy="68" r="8"/>
+     <circle cx="68" cy="92" r="6"/>
+     <circle cx="132" cy="92" r="6"/>
+    </g>
+  </g>
+
+  <!-- Border with primary color -->
+  <rect width="200" height="200" rx="28" fill="none" stroke="#ff6b9d" stroke-width="3" opacity="0.45"/>
+</svg>

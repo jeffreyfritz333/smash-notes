@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg-Mega_Man" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#00171f"/>
+      <stop offset="45%" stop-color="#005673"/>
+      <stop offset="100%" stop-color="#3d3500"/>
+    </linearGradient>
+    <radialGradient id="glow-Mega_Man" cx="50%" cy="44%" r="52%">
+      <stop offset="0%" stop-color="#4dd2ff" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#f8e04d" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#f8e04d" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="emb-Mega_Man" x1="80" y1="20" x2="140" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#80dfff"/>
+      <stop offset="100%" stop-color="#c7f1ff"/>
+    </linearGradient>
+    <linearGradient id="accent-Mega_Man" x1="0" y1="200" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f5d300" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#f5d300" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip-Mega_Man">
+      <rect width="200" height="200" rx="28"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#clip-Mega_Man)">
+    <rect width="200" height="200" fill="url(#bg-Mega_Man)"/>
+    <ellipse cx="100" cy="88" rx="110" ry="100" fill="url(#glow-Mega_Man)"/>
+
+    <!-- Accent color wash -->
+    <rect width="200" height="200" fill="url(#accent-Mega_Man)"/>
+
+    <!-- Emblem -->
+    <g fill="url(#emb-Mega_Man)" opacity="0.92">
+      <circle cx="100" cy="80" r="32"/>
+     <rect x="116" y="100" width="52" height="32" rx="16"/>
+     <circle cx="170" cy="116" r="10" opacity="0.5"/>
+     <rect x="84" y="116" width="32" height="48" rx="6"/>
+    </g>
+  </g>
+
+  <!-- Border with primary color -->
+  <rect width="200" height="200" rx="28" fill="none" stroke="#00bfff" stroke-width="3" opacity="0.45"/>
+</svg>

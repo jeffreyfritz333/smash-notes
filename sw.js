@@ -1,4 +1,4 @@
-const CACHE_NAME = 'smash-notes-v2';
+const CACHE_NAME = 'smash-notes-v5';
 const ASSETS = ['./', 'index.html', 'style.css', 'app.js', 'roster.js'];
 
 self.addEventListener('install', e => {
