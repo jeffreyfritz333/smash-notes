@@ -1,20 +1,18 @@
 // State
 let myFighter = null;
 let notes = {}; // { "myId:oppId": { strengths, weaknesses, gameplan, rating } }
-let sleepInterval = null;
-let sleepIndex = 0;
-let sleepRoster = [];
+let cameFromStats = false;
 
 // DOM
 const $charSelect = document.getElementById('charSelectScreen');
 const $matchups = document.getElementById('matchupsScreen');
 const $noteScreen = document.getElementById('noteScreen');
-const $sleepScreen = document.getElementById('sleepScreen');
 const $header = document.getElementById('appHeader');
 const $headerTitle = document.getElementById('headerTitle');
 const $headerBack = document.getElementById('headerBack');
 const $headerPlaying = document.getElementById('headerPlaying');
-const $sleepBtn = document.getElementById('sleepBtn');
+const $statsScreen = document.getElementById('statsScreen');
+const $statsBtn = document.getElementById('statsBtn');
 const $toast = document.getElementById('toast');
 
 // Init
@@ -63,7 +61,7 @@ function deleteNote(oppId) {
 
 // Navigation
 function showScreen(screen) {
-  [$charSelect, $matchups, $noteScreen, $sleepScreen].forEach(s => s.classList.remove('active'));
+  [$charSelect, $matchups, $noteScreen, $statsScreen].forEach(s => s.classList.remove('active'));
   screen.classList.add('active');
 }
 
@@ -71,6 +69,7 @@ function showCharSelect() {
   $headerBack.style.display = myFighter !== null ? 'block' : 'none';
   $headerTitle.textContent = 'Choose Your Fighter';
   $headerPlaying.style.display = 'none';
+  $statsBtn.style.display = 'none';
   showScreen($charSelect);
   renderCharSelect();
 }
@@ -80,8 +79,17 @@ function showMatchups() {
   $headerTitle.textContent = 'Matchups';
   updatePlayingAs();
   $headerPlaying.style.display = 'flex';
+  $statsBtn.style.display = 'block';
   showScreen($matchups);
   renderMatchups();
+}
+
+function showStats() {
+  $headerBack.style.display = 'block';
+  $headerTitle.textContent = 'Matchup Stats';
+  $statsBtn.style.display = 'none';
+  showScreen($statsScreen);
+  renderStats();
 }
 
 function showNoteEditor(oppId) {
@@ -95,11 +103,20 @@ function showNoteEditor(oppId) {
 
 $headerBack.addEventListener('click', () => {
   if ($noteScreen.classList.contains('active')) {
-    showMatchups();
+    if (cameFromStats) {
+      cameFromStats = false;
+      showStats();
+    } else {
+      showMatchups();
+    }
   } else if ($charSelect.classList.contains('active')) {
+    showMatchups();
+  } else if ($statsScreen.classList.contains('active')) {
     showMatchups();
   }
 });
+
+$statsBtn.addEventListener('click', showStats);
 
 // Render: Character Select
 function renderCharSelect() {
@@ -191,6 +208,129 @@ function renderMatchups() {
   });
 }
 
+// Render: Matchup Stats
+function renderStats() {
+  const opponents = ROSTER.filter(f => f[0] !== myFighter);
+  const groups = { winning: [], even: [], losing: [], unrated: [] };
+
+  opponents.forEach(f => {
+    const n = getNote(f[0]);
+    const rating = n && n.rating ? n.rating : 'unrated';
+    groups[rating].push(f);
+  });
+
+  const total = opponents.length;
+  const w = groups.winning.length;
+  const e = groups.even.length;
+  const l = groups.losing.length;
+  const u = groups.unrated.length;
+  const rated = w + e + l;
+
+  // Conic gradient for donut chart
+  const pW = total ? (w / total) * 100 : 0;
+  const pE = total ? (e / total) * 100 : 0;
+  const pL = total ? (l / total) * 100 : 0;
+  const s1 = pW;
+  const s2 = s1 + pE;
+  const s3 = s2 + pL;
+  const donutGradient = total === 0 ? '#333'
+    : `conic-gradient(#27ae60 0% ${s1}%, #f39c12 ${s1}% ${s2}%, #e74c3c ${s2}% ${s3}%, #333 ${s3}% 100%)`;
+
+  function renderGroup(fighters) {
+    if (fighters.length === 0) return '<div class="stats-empty">None yet</div>';
+    return `<div class="roster-grid">${fighters.map(f =>
+      `<div class="fighter-card" style="--glow:${f[2]}" data-id="${f[0]}">
+        ${fighterAvatarHTML(f[1], f[2], 'card')}
+        <div class="fighter-name">${f[1]}</div>
+      </div>`
+    ).join('')}</div>`;
+  }
+
+  $statsScreen.innerHTML = `
+    <div class="stats-overview">
+      <div class="stats-donut" style="background:${donutGradient}">
+        <div class="stats-donut-label">
+          <span class="donut-count">${rated}</span>
+          <span class="donut-sub">of ${total} rated</span>
+        </div>
+      </div>
+      <div class="stats-legend">
+        <div class="stats-legend-item">
+          <div class="stats-legend-dot win"></div>
+          <span class="stats-legend-count">${w}</span>
+          <span class="stats-legend-label">Winning</span>
+        </div>
+        <div class="stats-legend-item">
+          <div class="stats-legend-dot even"></div>
+          <span class="stats-legend-count">${e}</span>
+          <span class="stats-legend-label">Even</span>
+        </div>
+        <div class="stats-legend-item">
+          <div class="stats-legend-dot lose"></div>
+          <span class="stats-legend-count">${l}</span>
+          <span class="stats-legend-label">Losing</span>
+        </div>
+        <div class="stats-legend-item">
+          <div class="stats-legend-dot unrated"></div>
+          <span class="stats-legend-count">${u}</span>
+          <span class="stats-legend-label">Unrated</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats-bar-chart">
+      <div class="stats-bar-segment win" style="width:${pW}%"></div>
+      <div class="stats-bar-segment even" style="width:${pE}%"></div>
+      <div class="stats-bar-segment lose" style="width:${pL}%"></div>
+      <div class="stats-bar-segment unrated" style="width:${100 - pW - pE - pL}%"></div>
+    </div>
+
+    <div class="stats-section">
+      <div class="stats-section-header">
+        <div class="stats-section-dot win"></div>
+        <span class="stats-section-title">Winning</span>
+        <span class="stats-section-count">${w} matchup${w !== 1 ? 's' : ''}</span>
+      </div>
+      ${renderGroup(groups.winning)}
+    </div>
+
+    <div class="stats-section">
+      <div class="stats-section-header">
+        <div class="stats-section-dot even"></div>
+        <span class="stats-section-title">Even</span>
+        <span class="stats-section-count">${e} matchup${e !== 1 ? 's' : ''}</span>
+      </div>
+      ${renderGroup(groups.even)}
+    </div>
+
+    <div class="stats-section">
+      <div class="stats-section-header">
+        <div class="stats-section-dot lose"></div>
+        <span class="stats-section-title">Losing</span>
+        <span class="stats-section-count">${l} matchup${l !== 1 ? 's' : ''}</span>
+      </div>
+      ${renderGroup(groups.losing)}
+    </div>
+
+    <div class="stats-section">
+      <div class="stats-section-header">
+        <div class="stats-section-dot unrated"></div>
+        <span class="stats-section-title">Unrated</span>
+        <span class="stats-section-count">${u} matchup${u !== 1 ? 's' : ''}</span>
+      </div>
+      ${renderGroup(groups.unrated)}
+    </div>
+  `;
+
+  // Click any fighter card to open its note editor
+  $statsScreen.querySelectorAll('.fighter-card').forEach(card => {
+    card.addEventListener('click', () => {
+      cameFromStats = true;
+      showNoteEditor(parseFloat(card.dataset.id));
+    });
+  });
+}
+
 // Render: Note Editor
 function renderNoteEditor(oppId, opp) {
   const me = ROSTER.find(f => f[0] === myFighter);
@@ -201,13 +341,13 @@ function renderNoteEditor(oppId, opp) {
       <div class="vs-stars"></div>
       <div class="vs-lightning"></div>
       <div class="vs-flash"></div>
-      <div class="vs-fighter" style="--glow:${me[2]}">
+      <div class="vs-fighter vs-left" style="--glow:${me[2]}">
         ${fighterAvatarHTML(me[1], me[2], 'vs')}
         <div class="fighter-label">${me[1]}</div>
       </div>
       <div class="vs-divider"></div>
       <div class="vs-text">VS.</div>
-      <div class="vs-fighter" style="--glow:${opp[2]}">
+      <div class="vs-fighter vs-right" style="--glow:${opp[2]}">
         ${fighterAvatarHTML(opp[1], opp[2], 'vs')}
         <div class="fighter-label">${opp[1]}</div>
       </div>
@@ -269,7 +409,8 @@ function renderNoteEditor(oppId, opp) {
       rating: selectedRating
     });
     toast('Notes saved!');
-    showMatchups();
+    if (cameFromStats) { cameFromStats = false; showStats(); }
+    else { showMatchups(); }
   });
 
   // Delete
@@ -278,96 +419,11 @@ function renderNoteEditor(oppId, opp) {
     delBtn.addEventListener('click', () => {
       deleteNote(oppId);
       toast('Notes deleted');
-      showMatchups();
+      if (cameFromStats) { cameFromStats = false; showStats(); }
+      else { showMatchups(); }
     });
   }
 }
-
-// Sleep / Showcase
-function shuffleArray(arr) {
-  const a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
-
-function startSleep() {
-  stopSleep();
-  sleepRoster = shuffleArray(ROSTER);
-  sleepIndex = 0;
-  $header.style.display = 'none';
-  showScreen($sleepScreen);
-  renderSleepFighter(true);
-  sleepInterval = setInterval(() => cycleSleep(), 4000);
-}
-
-function stopSleep() {
-  if (sleepInterval) {
-    clearInterval(sleepInterval);
-    sleepInterval = null;
-  }
-}
-
-function wakeSleep() {
-  stopSleep();
-  $header.style.display = '';
-  // Clear sleep stage animations
-  const stage = $sleepScreen.querySelector('.sleep-stage');
-  stage.querySelector('.sleep-fighter-active').innerHTML = '';
-  stage.querySelector('.sleep-fighter-exit').innerHTML = '';
-  if (myFighter !== null) {
-    showMatchups();
-  } else {
-    showCharSelect();
-  }
-}
-
-function renderSleepFighter(immediate) {
-  const f = sleepRoster[sleepIndex];
-  const stage = $sleepScreen.querySelector('.sleep-stage');
-  const active = stage.querySelector('.sleep-fighter-active');
-
-  stage.style.setProperty('--glow', f[2]);
-
-  active.innerHTML = `
-    <div class="sleep-number">#${displayNum(f[0])}</div>
-    <img class="sleep-portrait" src="${fighterImagePath(f[1])}"
-         onerror="this.style.display='none'">
-    <div class="sleep-name">${f[1]}</div>
-  `;
-
-  if (!immediate) {
-    active.classList.remove('sleep-enter');
-    void active.offsetWidth; // force reflow
-    active.classList.add('sleep-enter');
-  }
-}
-
-function cycleSleep() {
-  const stage = $sleepScreen.querySelector('.sleep-stage');
-  const active = stage.querySelector('.sleep-fighter-active');
-  const exit = stage.querySelector('.sleep-fighter-exit');
-
-  // Move current to exit slot
-  exit.innerHTML = active.innerHTML;
-  exit.classList.remove('sleep-exit');
-  void exit.offsetWidth;
-  exit.classList.add('sleep-exit');
-
-  // Advance
-  sleepIndex = (sleepIndex + 1) % sleepRoster.length;
-  if (sleepIndex === 0) sleepRoster = shuffleArray(ROSTER);
-
-  renderSleepFighter(false);
-
-  // Clean up exit after animation
-  setTimeout(() => { exit.innerHTML = ''; exit.classList.remove('sleep-exit'); }, 800);
-}
-
-$sleepBtn.addEventListener('click', startSleep);
-$sleepScreen.addEventListener('click', wakeSleep);
 
 // Helpers
 
@@ -448,13 +504,75 @@ function fighterBadgePath(name) {
   return badge ? 'images/badges/' + badge + '.png' : null;
 }
 
+// Visual theme per character — determines font + text effects on grid tiles
+const FIGHTER_THEME = {
+  // Playful: bouncy comic style
+  'Mario': 'playful', 'Luigi': 'playful', 'Peach': 'playful', 'Daisy': 'playful',
+  'Bowser': 'playful', 'Bowser Jr.': 'playful', 'Rosalina & Luma': 'playful',
+  'Dr. Mario': 'playful', 'Piranha Plant': 'playful', 'Yoshi': 'playful',
+  'Wario': 'playful', 'Donkey Kong': 'playful', 'Diddy Kong': 'playful',
+  'King K. Rool': 'playful', 'Banjo & Kazooie': 'playful',
+  // Medieval: elegant gold serif
+  'Link': 'medieval', 'Zelda': 'medieval', 'Sheik': 'medieval',
+  'Ganondorf': 'medieval', 'Young Link': 'medieval', 'Toon Link': 'medieval',
+  'Pit': 'medieval', 'Dark Pit': 'medieval', 'Palutena': 'medieval',
+  // Pixel: 8-bit blocky metallic
+  'Mega Man': 'pixel', 'Mr. Game & Watch': 'pixel', 'R.O.B.': 'pixel',
+  'Pac-Man': 'pixel', 'Steve': 'pixel', 'Duck Hunt': 'pixel',
+  // Sci-fi: futuristic neon glow
+  'Samus': 'scifi', 'Dark Samus': 'scifi', 'Zero Suit Samus': 'scifi',
+  'Ridley': 'scifi', 'Fox': 'scifi', 'Falco': 'scifi', 'Wolf': 'scifi',
+  'Shulk': 'scifi', 'Pyra/Mythra': 'scifi', 'Olimar': 'scifi',
+  // Electric: bold energy glow
+  'Pikachu': 'electric', 'Pichu': 'electric', 'Mewtwo': 'electric',
+  'Pokemon Trainer': 'electric', 'Lucario': 'electric',
+  'Greninja': 'electric', 'Incineroar': 'electric',
+  // Noble: regal serif
+  'Marth': 'noble', 'Lucina': 'noble', 'Roy': 'noble', 'Chrom': 'noble',
+  'Ike': 'noble', 'Robin': 'noble', 'Corrin': 'noble', 'Byleth': 'noble',
+  // Martial: bold impact
+  'Ryu': 'martial', 'Ken': 'martial', 'Terry': 'martial',
+  'Kazuya': 'martial', 'Little Mac': 'martial', 'Min Min': 'martial',
+  'Captain Falcon': 'martial',
+  // Edgy: angular stylish
+  'Joker': 'edgy', 'Bayonetta': 'edgy', 'Inkling': 'edgy',
+  // Stealth: dark military
+  'Snake': 'stealth',
+  // Speed: slanted fast
+  'Sonic': 'speed',
+  // Fantasy: dramatic silver
+  'Cloud': 'fantasy', 'Sephiroth': 'fantasy', 'Hero': 'fantasy', 'Sora': 'fantasy',
+  'Simon': 'fantasy', 'Richter': 'fantasy',
+  // Cute: soft bubbly
+  'Kirby': 'cute', 'King Dedede': 'cute', 'Meta Knight': 'cute',
+  'Jigglypuff': 'cute', 'Isabelle': 'cute', 'Villager': 'cute',
+  'Ice Climbers': 'cute',
+  // Retro: warm nostalgic pixel
+  'Ness': 'retro', 'Lucas': 'retro',
+  // Clean: minimal modern
+  'Wii Fit Trainer': 'clean',
+  'Mii Brawler': 'clean', 'Mii Swordfighter': 'clean', 'Mii Gunner': 'clean',
+};
+
 function fighterAvatarHTML(name, color, size) {
   const cls = size === 'mini' ? 'mini-avatar' : 'fighter-avatar';
-  const imgCls = size === 'vs' ? 'vs-portrait' : (size === 'mini' ? 'mini-img' : 'avatar-img');
   const badgePath = (size === 'card') ? fighterBadgePath(name) : null;
   const badgeHTML = badgePath
     ? `<img class="series-badge" src="${badgePath}" alt="" onerror="this.remove()">`
     : '';
+
+  if (size === 'card') {
+    // Grid tiles: themed initials as the primary visual
+    const theme = FIGHTER_THEME[name] || 'clean';
+    const initials = fighterInitials(name);
+    return `<div class="${cls}" style="background:${color}">
+      <span class="fighter-initials theme-${theme}">${initials}</span>
+      ${badgeHTML}
+    </div>`;
+  }
+
+  // VS header and mini avatar: keep portrait images
+  const imgCls = size === 'vs' ? 'vs-portrait' : 'mini-img';
   const stockSrc = fighterStockPath(name);
   return `<div class="${cls}" style="background:${color}">
     <img class="${imgCls}" src="${fighterImagePath(name)}" alt="${name}"
